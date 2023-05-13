@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "szakdolgozat-e179a"
-  }
+    "szakdolgozat": "angular-app-9ebcc",
+    "default": "angular-app-9ebcc"
+  },
+  "targets": {},
+  "etags": {}
 }

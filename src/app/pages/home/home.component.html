@@ -1,18 +1,9 @@
+<app-nav></app-nav>
 <div class="container">
-    <input type="text" [(ngModel)]="category">
-</div>
-
-
-<div [ngSwitch]="category">
-    <div *ngSwitchCase="'game'" class="container">
-        <app-game-card *ngFor="let game of games" [game]="game" appOnHover></app-game-card>
+    <div class="text-box">
+        <h1>Üdvözöllek oldalamon!</h1>
+        <p>A játék kezdetéhez vagy az eredmények megtekintéséhez használd az alábbi gombokat!</p>
+        <button class="button" [routerLink] ="['/game']">Játssz most</button>
+        <button class="button" [routerLink] ="['/scores']">Eredmények megtekintése</button>
     </div>
-    <div *ngSwitchDefault class="container">
-        <app-splash-screen>
-
-        </app-splash-screen>
-    </div>
-    
-</div>
-
-
+</div>  

@@ -1,0 +1,44 @@
+<div class="background">
+  <div class="centering">
+    <mat-card class="log-card">
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <h3>Bejelentkezés</h3>
+        <mat-card id="alertCard" class="alert" *ngIf="alertMessage">
+          {{alertMessage}}
+        </mat-card>
+        <mat-form-field class="max-width">
+          <mat-label>E-mail</mat-label>
+          <input type="email" name="email" matInput placeholder="asd@gmail.com" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Jelszó</mat-label>
+          <input type="password" name="password" matInput minlength="6" placeholder="Jelszó" formControlName="password">
+        </mat-form-field>
+        <br>
+        <div><button type="button" mat-button color="accent" [routerLink]="['/registration']">REGISZTRÁCIÓ</button>
+        </div>
+        <br>
+        <button type="submit" mat-raised-button color="primary" class="max-width"
+          [disabled]="form.invalid">BEJELENTKEZÉS</button>
+      </form>
+      <button class="without" type="button" color="orange" [routerLink]="['/guest']" >REGISZTRÁCIÓ NÉLKÜLI JÁTÉK</button>
+    </mat-card>
+  </div>
+
+</div>
+<!--<div class="section">
+    <h3 (click)="signUp()" style="cursor:pointer; color:rgb(255, 89, 0); font-size:32px; margin-bottom: 1em;">Regisztráláshoz kattintson ide</h3>
+    <h3>Bejelentkezés</h3>
+  
+    <input type="email" id="name" name="name" placeholder="Email cím" >
+    <br>
+    <input type="password" id="name" name="name" placeholder="Jelszó" ><br><br>
+  
+    
+    <div class="submit">
+      <button (click)="onSubmit()" class="btn">
+        Bejelentkezés
+      </button>
+    </div>
+  </div>
+ [(ngModel)]="email" [(ngModel)]="password"      -->

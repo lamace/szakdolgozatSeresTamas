@@ -1,5 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { GAMES } from './../../shared/database/game.database';
+import { Component } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-home',
@@ -7,18 +8,9 @@ import { GAMES } from './../../shared/database/game.database';
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent implements OnInit, OnDestroy {
-  games = GAMES;
-  category? = '';
-
+export class HomeComponent {
   constructor() { }
 
-  ngOnInit(): void {
-    this.category = 'game';
-  }
-
-  ngOnDestroy(): void {
-    delete this.category;
-  }
-
 }
+
+

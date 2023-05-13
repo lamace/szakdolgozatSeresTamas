@@ -1,0 +1,230 @@
+@mixin respond($breakpoint) {
+  @if($breakpoint==xl) {
+    @media (max-width: 1500px) {
+      @content
+    }
+  }
+
+  @if($breakpoint==large) {
+    @media (max-width: 1200px) {
+      @content
+    }
+  }
+
+  @if($breakpoint==medium) {
+    @media (max-width: 900px) {
+      @content
+    }
+  }
+
+  @if($breakpoint==small) {
+    @media (max-width: 600px) {
+      @content
+    }
+  }
+}
+
+.section {
+  background-image: url('image.jpg');
+  background-size: cover;
+  background-position: center center;
+  margin: 0px;
+  padding: 0px;
+  padding: 50px 150px;
+  height: 100%;
+  overflow: hidden;
+
+  @include respond(large) {
+    padding: 50px 50px;
+  }
+
+  @include respond(medium) {
+    padding: 50px 10px;
+  }
+
+  @include respond(small) {
+    padding: 0;
+  }
+
+  .container {
+    background-color: #f2cd5e;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.2);
+
+    @include respond(small) {
+      border-radius: 0;
+    }
+
+    .progress {
+      background-color: #000;
+      font-family: 'poppins', sans-serif;
+      height: 25px;
+      font-size: 1rem;
+      color: #fff;
+      text-align: right;
+      padding: 10px 150px;
+      border-radius: 20px 20px 0 0;
+
+      .previous-score {
+        text-align: center;
+        padding: 10px 150px;
+
+        @include respond(small) {
+          border-radius: 0;
+          padding: 10px 30px;
+        }
+      }
+
+      @include respond(small) {
+        border-radius: 0;
+        padding: 10px 30px;
+      }
+    }
+
+
+    .instruction {
+      font-family: 'poppins', sans-serif;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      color: black;
+      text-align: center;
+    }
+
+    .main-image {
+      max-height: 300px;
+      height: 300px;
+      width: 300px;
+      text-align: center;
+      margin: 30px auto;
+      overflow: hidden;
+      box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
+
+
+      @include respond(xl) {
+        height: 250px;
+        width: 250px;
+
+      }
+
+      @include respond(large) {
+        height: 200px;
+        width: 200px;
+
+      }
+
+      img {
+        height: 100%;
+
+        @include respond(xl) {
+          height: 250px;
+
+        }
+
+        @include respond(large) {
+          height: 200px;
+
+        }
+      }
+
+    }
+
+    .choices {
+      max-height: 800px;
+      height: 220px;
+      width: 100%;
+      text-align: center;
+      margin: 20px auto 90px;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+
+      @include respond(xl) {
+        height: 190px;
+
+      }
+
+      @include respond(large) {
+        height: 150px;
+
+      }
+
+      @include respond(medium) {
+        flex-direction: column;
+        height: 500px;
+
+      }
+
+      @include respond(small) {
+        height: 800px;
+        padding: 0;
+
+      }
+
+      .img-container {
+        width: 200px;
+        margin: auto;
+        height: 200px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        text-align: center;
+        align-items: center;
+
+        img {
+          width: fit-content;
+          height: 100%;
+        }
+
+        @include respond(medium) {
+          margin: 20px auto;
+          //height: 40%;
+        }
+
+        @include respond(small) {
+          //height: 20%;
+        }
+
+        &:hover {
+          border: 2px solid;
+          padding: 5px;
+          transition: 0.1s ease;
+        }
+
+      }
+
+    }
+
+    .submit {
+      text-align: center;
+      margin: 20px auto;
+
+      button {
+        width: 170px;
+        font-family: 'poppins', sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        border: none;
+        color: #fff;
+        background-color: #000000;
+        padding: 20px 50px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: 0.1s ease;
+
+        &:hover {
+          width: 180px;
+          font-size: 1.1rem;
+          box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
+          transition: 0.1s ease;
+        }
+      }
+    }
+  }
+}
+
+

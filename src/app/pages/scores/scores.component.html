@@ -1,0 +1,33 @@
+<div class="background">
+  <div class="submit">
+    <button [routerLink]="['/game']" class="btn">
+      Új játék
+    </button>
+  </div>
+
+  <table class="styled-table">
+    <th class="th">Toplista</th>
+    <tr>
+      <th>Felhasználónév</th>
+      <th>Legjobb eredmény</th>
+    </tr>
+    <tr *ngFor="let x of topScores">
+      <td>{{x.name}}</td>
+      <td>{{x.score}}</td>
+    </tr>
+  </table>
+  <table class="styled-table">
+    <th class="th">Saját eredmények</th>
+    <tr>
+      <th>Időpont</th>
+      <th>Eredmény</th>
+    </tr>
+    <tr *ngFor="let x of sortDate">
+      <td>{{x.date}}</td>
+      <td>{{x.score}}</td>
+    </tr>
+  </table>
+
+
+
+</div>

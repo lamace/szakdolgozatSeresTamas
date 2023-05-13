@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TitleService } from './services/routing/title.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Szakdolgozat';
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  constructor(private titleService: TitleService){
+    this.titleService.refreshTitle();
+  }
 }

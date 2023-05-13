@@ -1,13 +1,57 @@
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 16px;
-}
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative; // this allows absolute positioning for child elements
+  background-image: url('image.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  overflow: hidden;
+  padding: 50px 150px;
 
-app-game-card{
-    min-width: 200px;
-    flex: 1;
-    margin: 4px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  .text-box {
+    position: absolute; // this allows the box to be positioned relative to the container
+    top: 15%; // adjust this to move the box higher or lower
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 60px;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+    text-align: center; 
+
+    h1 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      margin-top: 20px;
+      padding: 20px 40px;
+      font-size: 1.25em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
 }

@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-import { SplashScreenComponent } from '../splash-screen/splash-screen.component';
-import { SplashScreenModule } from '../splash-screen/splash-screen.module';
-import { GameCardModule } from '../game/card/game-card.module';
-import { FormsModule } from '@angular/forms';
-import { OnHoverModule } from 'src/app/shared/directives/on-hover/on-hover.module';
+import { NavModule } from '../nav/nav.module';
+import { HomeRoutingModule } from './home-routing.module';
+import { RouterModule } from '@angular/router';
+import { AppModule } from 'src/app/app.module';
 
 
 
@@ -14,8 +13,8 @@ import { OnHoverModule } from 'src/app/shared/directives/on-hover/on-hover.modul
 @NgModule({
   declarations: [HomeComponent],
   imports: [
-    CommonModule, FormsModule, SplashScreenModule, GameCardModule, OnHoverModule
+    CommonModule, HomeRoutingModule, RouterModule
   ],
-  exports: [HomeComponent]
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class HomeModule { }

@@ -1,0 +1,45 @@
+<mat-toolbar>
+  <mat-toolbar-row color="blue">
+
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+    <a mat-button [routerLink]="[ '/home' ]">
+     Szakdolgozat
+    </a>
+   
+   <mat-menu #menu="matMenu">
+     <button mat-menu-item [routerLink] ="['/home']">
+       <mat-icon>home</mat-icon>
+       <span>Főoldal</span>
+     </button>
+     <button mat-menu-item [routerLink] ="['/game']">
+       <mat-icon>games</mat-icon>
+       <span>Játék</span>
+     </button>
+     <button mat-menu-item [routerLink] ="['/scores']">
+       <mat-icon>star</mat-icon>
+       <span>Eredmények</span>
+     </button>
+   </mat-menu> 
+   
+    <span style="flex: 1 1;"></span>
+    <button mat-button [matMenuTriggerFor]="menu2">
+      Profil&nbsp;
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #menu2="matMenu">
+      <button mat-menu-item [routerLink]="['/profile']" >
+        <mat-icon>person</mat-icon>
+        <span>Profil</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>arrow_back</mat-icon>
+        <span>Kijelentkezés</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+
+
+</mat-toolbar>
+
+

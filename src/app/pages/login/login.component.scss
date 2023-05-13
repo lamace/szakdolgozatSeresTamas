@@ -1,0 +1,32 @@
+.alert{
+    text-align: center;
+    margin: auto;
+    color: red;
+    background-color: white;
+    border: 1px solid pink;
+    border-radius: 0;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: none;
+}
+.background{
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100%; margin: 0px auto; padding: 0px;
+  }  
+  
+.without{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    float: right;
+    $color: #000000;
+    background-color: orange;
+
+    &:hover {
+        width:auto;
+        box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
+        transition: 0.1s ease;
+      }
+  
+}

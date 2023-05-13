@@ -1,0 +1,32 @@
+  <div class="section">
+    <div class="container">
+
+      <div class="progress">{{level}}. kérdés a 10-ből
+        
+      </div>
+      <div class="instruction">Válassza ki a fő képhez hasonlító képet!</div>
+      <div class="main-image">
+        <img src="{{this.mainImg}}" alt="landscape">
+      </div>
+      <div class="choices">
+        <div class="img-container"><img (click)="selectImage(this.choices[0])" src="{{this.choices[0]}}"
+            alt="landscape">
+        </div>
+        <div class="img-container"><img (click)="selectImage(this.choices[1])" src="{{this.choices[1]}}"
+            alt="landscape">
+        </div>
+        <div class="img-container"><img (click)="selectImage(this.choices[2])" src="{{this.choices[2]}}"
+            alt="landscape">
+        </div>
+        <div class="img-container"><img (click)="selectImage(this.choices[3])" src="{{this.choices[3]}}"
+            alt="landscape">
+        </div>
+      </div>
+      <!--    <div class="submit">-->
+      <!--      <button class="btn">-->
+      <!--        Submit-->
+      <!--      </button>-->
+      <!--    </div>   progess classban:  <div class="previous-score">Előző játék eredménye: {{prevScore}}</div>-->
+    </div>
+  </div>
+

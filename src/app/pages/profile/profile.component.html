@@ -1,0 +1,33 @@
+<section class="background">
+  <div class="margin-bottom">
+    <mat-card class="margin-top">
+      <mat-card-header>
+        <mat-card-title>Biztonság</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>lock</mat-icon>
+            <div mat-line> E-mail </div>
+            <div mat-line> {{this.user?.email}} </div>
+          </mat-list-item>
+          <form [formGroup]="form1" (ngSubmit)="updatePassword()">
+            <mat-form-field>
+
+              <mat-label>Jelszó módosítás</mat-label>
+              <input type="password" name="password" [type]="hide ? 'password':'text'" matInput placeholder="Jelszó módosítás"
+                formControlName="password1">
+              <mat-hint align="end">min. hossz 6 / {{form1.value.password1.length}}</mat-hint>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility': 'visibility_off'}}</mat-icon>
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary" [disabled]="form1.invalid">MÓDÓSÍTÁS</button>
+
+          </form>
+
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+</section>

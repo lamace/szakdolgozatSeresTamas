@@ -1,0 +1,113 @@
+<div class="background">
+  <div class="centering">
+    <mat-card class="log-card">
+      <form [formGroup]="form" (ngSubmit)="registration()">
+        <h3>Regisztráció</h3>
+        <mat-form-field class="max-width">
+          <mat-label>Felhasználónév</mat-label>
+          <input matInput type="text" name="nickname" placeholder="Pl. serestamas" formControlName="userName">
+        </mat-form-field>
+
+        <mat-form-field class="max-width">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="email" name="email" placeholder="Pl. asd@gmail.com" formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field class="max-width">
+          <mat-label>Jelszó</mat-label>
+          <input matInput type="password" name="password" placeholder="Jelszó" formControlName="password1">
+          <mat-hint align="end">min. hossz 6 / {{form.value.password1.length}}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="max-width">
+          <mat-label>Jelszó újra</mat-label>
+          <input matInput type="password" name="password" placeholder="Jelszó újra" formControlName="password2">
+          <mat-hint align="end">min. hossz 6 / {{form.value.password2.length}}</mat-hint>
+        </mat-form-field>
+
+        <mat-chip-list *ngIf="error">
+          <mat-chip color="warn" class="max-width" style="margin-top: 16px;" selected>
+            A 2 jelszó nem egyezik meg
+          </mat-chip>
+        </mat-chip-list>
+        <br>
+        <div><button type="button" mat-button color="accent" [routerLink]="['/login']">BEJELENTKEZÉS</button></div>
+        <br>
+        <button type="submit" mat-raised-button color="primary" class="max-width"
+          [disabled]="form.invalid">REGISZTRÁCIÓ</button>
+      </form>
+    </mat-card>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="centering">
+  <mat-card class="log-card" (ngSubmit)="registration()">
+    <h3>Regisztráció</h3>
+    <span *ngIf="uniqName" style="color: red;">Ezt a felhasználónevet már valaki más használja</span><br>
+    <input type="text" id="name" name="name" placeholder="Felhasználónév"  ><br>
+    <input type="email" id="name" name="name" placeholder="Email cím"  >
+    <br>
+    <input type="password" id="name" name="name" placeholder="Jelszó"  ><br>  
+    <div><button mat-button color="accent" [routerLink]="['/login']">BEJELENTKEZÉS</button></div>
+    <br>
+    <button type="submit" mat-raised-button color="primary" class="max-width">REGISZTRÁCIÓ</button>
+  </mat-card>
+</div>-->
+
+
+
+
+
+<!--<div class="centering">
+  <mat-card class="log-card">
+    <form [formGroup]="form" (ngSubmit)="registration()">
+      <h3>Regisztráció</h3>
+      <mat-form-field class="max-width">
+        <mat-label>Felhasználónév</mat-label>
+        <input matInput type="text" name="nickname" placeholder="Pl. serestamas" formControlName="userName">
+      </mat-form-field>
+
+      <mat-form-field class="max-width">
+        <mat-label>E-mail</mat-label>
+        <input matInput type="email" name="email" placeholder="Pl. asd@gmail.com" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field class="max-width">
+        <mat-label>Jelszó</mat-label>
+        <input matInput type="password" name="password" placeholder="Jelszó" formControlName="password1">
+        <mat-hint align="end">min. hossz 6 / {{form.value.password1.length}}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="max-width">
+        <mat-label>Jelszó újra</mat-label>
+        <input matInput type="password" name="password" placeholder="Jelszó újra" formControlName="password2">
+        <mat-hint align="end">min. hossz 6 / {{form.value.password2.length}}</mat-hint>
+      </mat-form-field>
+
+      <mat-chip-list *ngIf="error">
+        <mat-chip color="warn" class="max-width" style="margin-top: 16px;" selected>
+            A 2 jelszó nem egyezik meg
+        </mat-chip>
+      </mat-chip-list> 
+      <br>
+      <div><button mat-button color="accent" [routerLink]="['/login']">BEJELENTKEZÉS</button></div>
+      <br>
+      <button type="submit" mat-raised-button color="primary" class="max-width" [disabled]="form.invalid">REGISZTRÁCIÓ</button>
+    </form>
+  </mat-card>
+</div>
+-->
